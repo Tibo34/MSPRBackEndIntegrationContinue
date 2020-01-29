@@ -1,0 +1,2 @@
+DEBUG http-nio-9090-exec-3 com.mspr.integrationContinue.integrationContinue.Controller.ProduitController - Get all produits! 
+DEBUG http-nio-9090-exec-3 com.mspr.integrationContinue.integrationContinue.Controller.ProduitController - [com.mspr.integrationContinue.integrationContinue.Entity.Produit@70181cf6] 
