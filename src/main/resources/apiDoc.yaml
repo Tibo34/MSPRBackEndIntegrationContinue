@@ -7,12 +7,65 @@ host: api.example.com
 schemes:
   - https
 paths:
-  /users:
+  /Produits:
     get:
-      summary: Returns a list of users.
-      description: Optional extended description in Markdown.
+      summary: retourne la liste des produits.
       produces:
         - application/json
       responses:
         200:
           description: OK
+  /Produits/{id}:
+    get:
+      summary: retourne le produit correspondant à l'id
+      parameters:
+        - name: id
+          type: number
+          in: path
+          description: id du produit
+          required: true
+      produces:
+        - application/json
+      responses:
+        200:
+          description: ok
+  /Produits/create:
+    post:
+      summary: créer un produit
+      parameters:
+        - name: produit
+          type: number
+          in: query
+          description: produit à ajouté
+          required: true
+      produces:
+        - application/json
+      responses:
+        200:
+          description: le produit créer
+
+  /Produits/delete/{id}:
+    post:
+      summary: supprime un produit correspondant à l'id
+      parameters:
+        - name: id
+          type: number
+          in: path
+          description: id du produit à supprimé
+          required: true
+      responses:
+        200:
+          description: le produit a été supprimé
+
+definitions:
+    Produit:
+      type: object
+      required:
+        - id
+        - nom
+      properties:
+        id:
+          type: number
+        nom:
+          type: string
+
