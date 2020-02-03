@@ -1,7 +1,6 @@
 package com.mspr.integrationContinue.integrationContinue.Entity;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "Produit")

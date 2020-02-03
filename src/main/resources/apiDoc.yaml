@@ -56,7 +56,6 @@ paths:
       responses:
         200:
           description: le produit a été supprimé
-
 definitions:
     Produit:
       type: object

@@ -17,7 +17,7 @@ public class ProduitController {
     @Autowired
     private final ProduitRepository produitRepository;
 
-    private Logger logger = Logger.getLogger(ProduitController.class);
+    private final Logger logger = Logger.getLogger(ProduitController.class);
 
     public ProduitController(ProduitRepository produitRepository) {
         this.produitRepository = produitRepository;
@@ -36,7 +36,7 @@ public class ProduitController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public Produit afficherRecette(@PathVariable int id) {
+    public Produit afficherProduit(@PathVariable int id) {
         logger.debug("produits : " + id);
         Optional<Produit> produits = produitRepository.findById(id);
         logger.debug(produits);
@@ -45,7 +45,7 @@ public class ProduitController {
 
     @CrossOrigin(origins = "*")
     @RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json")
-    public Produit saveRecette(@RequestBody Produit produit) {
+    public Produit save(@RequestBody Produit produit) {
         logger.debug(produit);
         produit = produitRepository.save(produit);
         return produit;
